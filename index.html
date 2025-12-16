@@ -1,195 +1,238 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Impact Out</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+:root {
+  --white: #ffffff;
+  --offwhite: #f7f9fa;
+  --charcoal: #1f2933;
+  --muted: #4b5563;
+  --line: #e5e7eb;
 
-  <style>
-    :root {
-      --white: #ffffff;
-      --offwhite: #f7f9fa;
-      --charcoal: #1f2933;
-      --green: #0f766e;
-      --blue: #1e3a5f;
-      --coral: #f26b5b;
-    }
+  --green: #0f766e;
+  --blue: #1e3a5f;
+  --coral: #f26b5b;
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      margin: 0;
-      line-height: 1.6;
-      color: var(--charcoal);
-      background: var(--white);
-    }
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(31,41,51,0.08);
+}
 
-    nav {
-      position: sticky;
-      top: 0;
-      background: var(--white);
-      border-bottom: 1px solid #e5e7eb;
-      padding: 14px 24px;
-      display: flex;
-      gap: 20px;
-      z-index: 10;
-    }
+html { scroll-behavior: smooth; }
 
-    nav a {
-      text-decoration: none;
-      color: var(--blue);
-      font-weight: 500;
-    }
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0;
+  line-height: 1.65;
+  color: var(--charcoal);
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(15,118,110,0.10), transparent 60%),
+              radial-gradient(900px 500px at 90% 0%, rgba(30,58,95,0.10), transparent 55%),
+              var(--white);
+}
 
-    nav a:hover {
-      color: var(--green);
-    }
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-    section {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 90px 24px;
-    }
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.82);
+  border-bottom: 1px solid rgba(229,231,235,0.8);
+}
 
-    section.alt {
-      background: var(--offwhite);
-    }
+.nav-inner {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
 
-    h1 {
-      font-size: 2.6rem;
-      line-height: 1.1;
-      margin-bottom: 20px;
-      color: var(--green);
-    }
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: var(--charcoal);
+}
 
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      color: var(--blue);
-    }
+.nav-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
 
-    .cta a {
-      display: inline-block;
-      margin-right: 16px;
-      padding: 10px 16px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-    }
+.nav-links a {
+  color: var(--muted);
+  font-weight: 550;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
 
-    .cta a.primary {
-      background: var(--coral);
-      color: white;
-    }
+.nav-links a:hover {
+  color: var(--green);
+  background: rgba(15,118,110,0.08);
+  text-decoration: none;
+}
 
-    .cta a.primary:hover {
-      opacity: 0.9;
-    }
+section {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 88px 22px;
+}
 
-    .cta a.secondary {
-      color: var(--blue);
-    }
+.section-card {
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(229,231,235,0.9);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 34px;
+}
 
-    ul {
-      padding-left: 20px;
-    }
+h1 {
+  font-size: clamp(2.6rem, 3.5vw, 3.4rem);
+  line-height: 1.05;
+  margin: 0 0 18px 0;
+  color: var(--charcoal);
+}
 
-    blockquote {
-      border-left: 4px solid var(--green);
-      padding-left: 16px;
-      margin-left: 0;
-      color: #4b5563;
-    }
-  </style>
-</head>
+.hero-kicker {
+  display: inline-block;
+  font-weight: 650;
+  color: var(--green);
+  letter-spacing: 0.2px;
+  margin-bottom: 14px;
+}
 
-<body>
+.lead {
+  font-size: 1.15rem;
+  color: var(--muted);
+  margin: 0 0 24px 0;
+  max-width: 60ch;
+}
 
-<nav>
-  <a href="#top">Impact Out</a>
-  <a href="#engaged">When engaged</a>
-  <a href="#testimonials">Testimonials</a>
-  <a href="#approach">Approach</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
-</nav>
+h2 {
+  font-size: 1.6rem;
+  margin: 0 0 18px 0;
+  color: var(--charcoal);
+}
 
-<section id="top">
-  <h1>Impact Out</h1>
-  <p>
-    Impact Out partners with organisations on discrete pieces of work — such as strategy development, programme design, and high-stakes workshops — where additional thinking capacity and facilitation expertise are required.
-  </p>
-  <p class="cta">
-    <a class="primary" href="#contact">Work with Impact Out</a>
-    <a class="secondary" href="#testimonials">Selected work</a>
-  </p>
-</section>
+.rule {
+  width: 54px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--green), var(--blue));
+  border-radius: 999px;
+  margin: 12px 0 22px;
+}
 
-<section id="engaged">
-  <p><strong>Impact Out is typically engaged when organisations need focused, external support for a defined piece of work.</strong></p>
-  <ul>
-    <li>Strategy development or strategic refresh</li>
-    <li>Programme or initiative design</li>
-    <li>Workshops that support collective thinking, design, and decision-making</li>
-    <li>Cross-stakeholder or cross-disciplinary processes</li>
-    <li>Periods where internal capacity is stretched or incomplete</li>
-  </ul>
-</section>
+.cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
 
-<section id="testimonials" class="alt">
-  <h2>Testimonials and previous clients</h2>
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 16px;
+  border-radius: 12px;
+  font-weight: 650;
+  border: 1px solid transparent;
+  text-decoration: none;
+}
 
-  <blockquote>
-    “Testimonial placeholder — replace with a real quote.”
-  </blockquote>
-  <p>— Name, Title, Organisation</p>
+.btn-primary {
+  background: var(--coral);
+  color: white;
+  box-shadow: 0 10px 20px rgba(242,107,91,0.18);
+}
 
-  <blockquote>
-    “Testimonial placeholder — replace with a real quote.”
-  </blockquote>
-  <p>— Name, Title, Organisation</p>
+.btn-primary:hover { opacity: 0.92; text-decoration: none; }
 
-  <p><strong>Previous clients (add to this list):</strong></p>
-  <p>Nova Institute · Equality Collective · Capita / Think Beyond</p>
-</section>
+.btn-secondary {
+  background: rgba(30,58,95,0.06);
+  border-color: rgba(30,58,95,0.14);
+  color: var(--blue);
+}
 
-<section id="approach">
-  <h2>Approach / philosophy</h2>
-  <p>
-    Impact Out works alongside organisations doing serious, demanding work — and treats that work with the professionalism it deserves, without losing sight of the people carrying it.
-  </p>
-  <p>
-    The challenges we’re brought into are often complex, high-stakes, and heavy. We believe they are best met through clear thinking, careful structure, and genuine partnership.
-  </p>
-  <p>
-    Our approach balances rigour with humanity. The work is taken seriously. The spaces we create are thoughtful, engaged, and often lighter than expected — because people think better, decide better, and work better when there is room for curiosity, creativity, and humour alongside depth.
-  </p>
-  <p>
-    We partner in the work, not above it — bringing structure, perspective, and momentum, while staying grounded in context and reality.
-  </p>
-</section>
+.btn-secondary:hover { background: rgba(30,58,95,0.10); text-decoration: none; }
 
-<section id="about" class="alt">
-  <h2>About me and Associates</h2>
-  <p>
-    Impact Out is founded and led by Jade Jacobsohn.
-  </p>
-  <p>
-    Impact Out also works with a small network of trusted associates, brought in as needed depending on the scope and nature of the work.
-  </p>
-  <p><strong>Associates (examples of how this will appear):</strong></p>
-  <ul>
-    <li>Name — role / area of expertise</li>
-    <li>Name — role / area of expertise</li>
-    <li>Name — role / area of expertise</li>
-  </ul>
-</section>
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
 
-<section id="contact">
-  <h2>Contact us / Get a quote</h2>
-  <p>
-    To explore working together, contact <a href="mailto:hello@impactout.org">hello@impactout.org</a>.
-  </p>
-</section>
+.col-7 { grid-column: span 7; }
+.col-5 { grid-column: span 5; }
 
-</body>
-</html>
+@media (max-width: 860px) {
+  .col-7, .col-5 { grid-column: span 12; }
+}
+
+.bullets {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.bullets li {
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(229,231,235,0.9);
+  border-radius: 12px;
+  padding: 12px 14px;
+  color: var(--charcoal);
+}
+
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+.quote-card {
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(229,231,235,0.9);
+  border-radius: 12px;
+  padding: 18px 18px;
+}
+
+.quote-text {
+  color: var(--charcoal);
+  font-size: 1.02rem;
+}
+
+.quote-meta {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.chip {
+  border: 1px solid rgba(229,231,235,0.9);
+  background: rgba(255,255,255,0.78);
+  border-radius: 999px;
+  padding: 8px 12px;
+  color: var(--muted);
+  font-weight: 550;
+  font-size: 0.95rem;
+}
+
+.small {
+  color: var(--muted);
+}
+
+.footer {
+  padding: 40px 22px 60px;
+  max-width: 1020px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
